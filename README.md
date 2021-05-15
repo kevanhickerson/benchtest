@@ -1,4 +1,8 @@
-# benchtest
+# BenchTest
+
+## Pre-requisites
+* `yarn` is installed
+* `yarn global add @vue/cli`
 
 ## Project setup
 ```
