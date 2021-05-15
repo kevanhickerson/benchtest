@@ -27,10 +27,13 @@ export default {
 
 <style lang="scss" scoped>
 $borderWidth: 2px;
+$brandColor: #009b9e;
+$tablePadding: 16px;
 
 table {
   border-color: #eae9e5;
   border-radius: 4px;
+  border-spacing: 0px;
   border-style: solid;
   border-width: $borderWidth;
   margin: 24px;
@@ -44,17 +47,43 @@ table {
 tbody {
   background-color: #f7f6f4;
 
-  > * + * {
+  td {
     border-bottom-width: $borderWidth;
     border-bottom-style: solid;
+    border-bottom-color: #ececec;
+    padding: $tablePadding;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  tr {
+    &:last-child td {
+      border-bottom: none;
+    }
+
+    &:nth-child(even) {
+      color: $brandColor;
+    }
+
+    &:nth-child(odd) > td:nth-child(odd) {
+      color: #9c9c9e;
+    }
   }
 }
 
 thead {
   background-color: #ffffff;
-}
+  color: $brandColor;
+  text-align: left;
 
-th {
-  padding: 0px;
+  > th {
+    padding: $tablePadding;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
 }
 </style>
