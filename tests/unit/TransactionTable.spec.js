@@ -10,10 +10,10 @@ describe("TransactionTable.vue", () => {
 
     expect(rows.length).toEqual(0);
     expect(headers.length).toEqual(4);
-    expect(headers[0].text()).toBe("Date");
-    expect(headers[1].text()).toBe("Company");
-    expect(headers[2].text()).toBe("Account");
-    expect(headers[3].text()).toBe("$0.00");
+    expect(wrapper.find(".date").text()).toBe("Date");
+    expect(wrapper.find(".company").text()).toBe("Company");
+    expect(wrapper.find(".account").text()).toBe("Account");
+    expect(wrapper.find(".amount").text()).toBe("$0.00");
   });
 
   it("should contain a single table row", () => {
@@ -105,5 +105,6 @@ describe("TransactionTable.vue", () => {
 
     expect(data1[3].text()).toBe("$1.00");
     expect(data2[3].text()).toBe("$10.00");
+    expect(wrapper.find(".amount").text()).toBe("$11.00");
   });
 });

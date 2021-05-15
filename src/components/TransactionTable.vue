@@ -1,10 +1,10 @@
 <template>
   <table>
     <thead>
-      <th>Date</th>
-      <th>Company</th>
-      <th>Account</th>
-      <th>{{ getFormattedAmount(0) }}</th>
+      <th class="date">Date</th>
+      <th class="company">Company</th>
+      <th class="account">Account</th>
+      <th class="amount">{{ getFormattedAmount(totalAmount) }}</th>
     </thead>
     <tbody>
       <tr v-for="(item, index) in transactions" :key="index">
@@ -20,7 +20,18 @@
 <script>
 export default {
   props: {
-    transactions: Array,
+    transactions: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  computed: {
+    totalAmount() {
+      return this.transactions.reduce(
+        (acc, val) => acc + Number(val.Amount),
+        0
+      );
+    },
   },
   methods: {
     getFormattedAmount(unformattedAmount) {
