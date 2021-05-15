@@ -4,14 +4,14 @@
       <th>Date</th>
       <th>Company</th>
       <th>Account</th>
-      <th>$0</th>
+      <th>{{ getFormattedAmount(0) }}</th>
     </thead>
     <tbody>
       <tr v-for="(item, index) in transactions" :key="index">
         <td>{{ item.Date }}</td>
         <td>{{ item.Company }}</td>
         <td>{{ item.Ledger }}</td>
-        <td>{{ item.Amount }}</td>
+        <td>{{ getFormattedAmount(item.Amount) }}</td>
       </tr>
     </tbody>
   </table>
@@ -21,6 +21,14 @@
 export default {
   props: {
     transactions: Array,
+  },
+  methods: {
+    getFormattedAmount(unformattedAmount) {
+      return new Intl.NumberFormat("en-CA", {
+        style: "currency",
+        currency: "CAD",
+      }).format(unformattedAmount);
+    },
   },
 };
 </script>
@@ -36,7 +44,8 @@ table {
   border-spacing: 0px;
   border-style: solid;
   border-width: $borderWidth;
-  margin: 24px;
+  padding: 24px;
+  width: 100%;
 
   > * + * {
     border-bottom-width: $borderWidth;
