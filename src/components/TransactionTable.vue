@@ -1,0 +1,47 @@
+<template>
+  <table>
+    <thead>
+      <th>Date</th>
+      <th>Company</th>
+      <th>Account</th>
+      <th>$0</th>
+    </thead>
+    <tbody>
+      <tr></tr>
+    </tbody>
+  </table>
+</template>
+
+<style lang="scss" scoped>
+$borderWidth: 2px;
+
+table {
+  border-color: #EAE9E5;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: $borderWidth;
+  margin: 24px;
+
+  > * + * {
+    border-bottom-width: $borderWidth;
+    border-bottom-style: solid;
+  }
+}
+
+tbody {
+  background-color: #f7f6f4;
+
+  > * + * {
+    border-bottom-width: $borderWidth;
+    border-bottom-style: solid;
+  }
+}
+
+thead {
+  background-color: #ffffff;
+}
+
+th {
+  padding: 0px;
+}
+</style>
