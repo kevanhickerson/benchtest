@@ -1,8 +1,9 @@
 # BenchTest
 
+A quick and simple UI that fetches transaction data from an endpoint and displays it in a webpage.
+
 ## Pre-requisites
 * `yarn` is installed
-* `yarn global add @vue/cli`
 
 ## Project setup
 ```
@@ -28,6 +29,3 @@ yarn test:unit
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -55,7 +55,6 @@ table {
   border-spacing: 0px;
   border-style: solid;
   border-width: $borderWidth;
-  padding: 24px;
   width: 100%;
 
   > * + * {
